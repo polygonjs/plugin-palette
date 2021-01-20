@@ -54,7 +54,6 @@ function visibleIfColorsCountAtLeast(minVal: number): VisibleIfParamOptions[] {
 	}
 	return options;
 }
-
 class PaletteSopParamsConfig extends NodeParamsConfig {
 	/** @param name of the palette */
 	palette = ParamConfig.INTEGER(DEFAULT.palette, {
@@ -91,27 +90,27 @@ class PaletteSopParamsConfig extends NodeParamsConfig {
 	});
 	sep = ParamConfig.SEPARATOR();
 	/** @param palette color 1 */
-	color1 = ParamConfig.COLOR(DEFAULT.color1, {
+	color1 = ParamConfig.COLOR(DEFAULT.color1.toArray() as Number3, {
 		visibleIf: visibleIfColorsCountAtLeast(1),
 		conversion: ColorConversion.SRGB_TO_LINEAR,
 	});
 	/** @param palette color 2 */
-	color2 = ParamConfig.COLOR(DEFAULT.color2, {
+	color2 = ParamConfig.COLOR(DEFAULT.color2.toArray() as Number3, {
 		visibleIf: visibleIfColorsCountAtLeast(2),
 		conversion: ColorConversion.SRGB_TO_LINEAR,
 	});
 	/** @param palette color 3 */
-	color3 = ParamConfig.COLOR(DEFAULT.color3, {
+	color3 = ParamConfig.COLOR(DEFAULT.color3.toArray() as Number3, {
 		visibleIf: visibleIfColorsCountAtLeast(3),
 		conversion: ColorConversion.SRGB_TO_LINEAR,
 	});
 	/** @param palette color 4 */
-	color4 = ParamConfig.COLOR(DEFAULT.color4, {
+	color4 = ParamConfig.COLOR(DEFAULT.color4.toArray() as Number3, {
 		visibleIf: visibleIfColorsCountAtLeast(4),
 		conversion: ColorConversion.SRGB_TO_LINEAR,
 	});
 	/** @param palette color 5 */
-	color5 = ParamConfig.COLOR(DEFAULT.color5, {
+	color5 = ParamConfig.COLOR(DEFAULT.color5.toArray() as Number3, {
 		visibleIf: visibleIfColorsCountAtLeast(5),
 		conversion: ColorConversion.SRGB_TO_LINEAR,
 	});
@@ -127,6 +126,10 @@ export class PaletteSopNode extends TypedSopNode<PaletteSopParamsConfig> {
 	initializeNode() {
 		this.io.inputs.setCount(1);
 		this.io.inputs.initInputsClonedState(PaletteSopOperation.INPUT_CLONED_STATE);
+
+		this.params.onParamsCreated('palette_init', () => {
+			this.paramCallbackUpdateColors();
+		});
 	}
 
 	private _operation: PaletteSopOperation | undefined;

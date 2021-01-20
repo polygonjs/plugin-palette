@@ -13,6 +13,7 @@
 			margin: 0px;
 			height: 100%;
 			overflow: hidden;
+			background-color: #9a7cd1
 		}
 
 		canvas {
@@ -27,9 +28,14 @@
 
 	<div style='position:absolute; border: 1px solid lightgray; margin: 10px; padding: 10px;'>
 		<p>
-			<label>Sphere Radius</label>
-			<input type='range' min=0 max=2 step=0.01 value=1
-				oninput='sphere.p.radius.set(event.target.value)'></input>
+			<label>Palette</label>
+			<input type='range' min=0 max=60 step=1 value=1
+				oninput='palette.p.palette.set(event.target.value)'></input>
+		</p>
+		<p>
+			<label>Points Count</label>
+			<input type='range' min=0 max=200 step=1 value=200
+				oninput='scatter.p.pointsCount.set(event.target.value)'></input>
 		</p>
 	</div>
 

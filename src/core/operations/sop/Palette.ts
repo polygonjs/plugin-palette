@@ -42,6 +42,10 @@ export class PaletteSopOperation extends BaseSopOperation {
 	}
 
 	private _apply_palette(object: Object3DWithGeometry, params: PaletteSopParams) {
+		if (params.colorsCount <= 0) {
+			return;
+		}
+
 		const geometry = object.geometry;
 		if (!geometry) {
 			return;

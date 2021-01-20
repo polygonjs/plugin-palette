@@ -1,63 +1,64 @@
-// import {Poly} from 'polygonjs-engine/src/engine/Poly';
-// import {PolyScene} from 'polygonjs-engine/src/engine/scene/PolyScene';
-// import {ExtendedGeoObjNode} from './engine/nodes/obj/ExtendedGeo';
+import {Poly} from 'polygonjs-engine/src/engine/Poly';
+import {PolyScene} from 'polygonjs-engine/src/engine/scene/PolyScene';
+import {ExtendedGeoObjNode} from './engine/nodes/obj/ExtendedGeo';
 
-// // register all nodes
-// import {AllRegister} from 'polygonjs-engine/src/engine/poly/registers/All';
-// AllRegister.run();
-// // register nodes for this plugin
-// import {polyPluginOcclusion} from './index';
-// Poly.registerPlugin(polyPluginOcclusion);
+// register all nodes
+import {AllRegister} from 'polygonjs-engine/src/engine/poly/registers/All';
+AllRegister.run();
+// register nodes for this plugin
+import {polyPluginPalette} from './index';
+import {AttribClass} from 'polygonjs-engine/src/core/geometry/Constant';
+Poly.registerPlugin(polyPluginPalette);
 
-// // create a scene
-// const scene = new PolyScene();
+// create a scene
+const scene = new PolyScene();
 
-// // create a sphere and plane
-// const geo = scene.root().createNode('geo') as ExtendedGeoObjNode;
-// const sphere = geo.createNode('sphere');
-// const plane = geo.createNode('plane');
-// const merge = geo.createNode('merge');
-// merge.setInput(0, sphere);
-// merge.setInput(1, plane);
-// plane.p.size.set([4, 4]);
-// plane.p.stepSize.set(0.02);
-// plane.p.center.y.set(-1);
+// create a sphere and plane
+const geo = scene.root().createNode('geo') as ExtendedGeoObjNode;
+const sphere = geo.createNode('sphere');
+const plane = geo.createNode('plane');
+const scatter = geo.createNode('scatter');
+const palette = geo.createNode('palette');
+const copy = geo.createNode('copy');
+const attribPromote = geo.createNode('attribPromote');
+const material = geo.createNode('material');
 
-// // add occlusion
-// const occlusion = geo.createNode('occlusion');
-// occlusion.setInput(0, merge);
+const materials = scene.root().createNode('materials');
+const meshBasicMat = materials.createNode('meshBasic');
+meshBasicMat.p.useVertexColors.set(1);
 
-// // add material
-// const material = geo.createNode('material');
-// material.setInput(0, occlusion);
-// material.flags.display.set(true);
-// const MAT = scene.root().createNode('materials');
-// const meshBasicBuilder = MAT.createNode('meshBasicBuilder');
-// const output = meshBasicBuilder.createNode('output');
-// const attribute = meshBasicBuilder.createNode('attribute');
-// const complement = meshBasicBuilder.createNode('complement');
-// const floatToVec3 = meshBasicBuilder.createNode('floatToVec3');
-// output.setInput('color', floatToVec3);
-// floatToVec3.setInput('x', complement);
-// floatToVec3.setInput('y', complement);
-// floatToVec3.setInput('z', complement);
-// complement.setInput(0, attribute);
-// attribute.p.name.set('occlusion');
-// material.p.material.setNode(meshBasicBuilder);
+sphere.p.radius.set(0.2);
+plane.p.size.set([4, 4]);
+scatter.p.pointsCount.set(200);
+scatter.setInput(0, plane);
+palette.p.palette.set(1);
+palette.setInput(0, scatter);
+copy.setInput(0, sphere);
+copy.setInput(1, palette);
+copy.p.copyAttributes.set(1);
+copy.p.attributesToCopy.set('color');
+attribPromote.setInput(0, copy);
+attribPromote.p.classFrom.set(AttribClass.OBJECT);
+attribPromote.p.classTo.set(AttribClass.VERTEX);
+attribPromote.p.name.set('color');
+material.setInput(0, attribPromote);
+material.p.material.set(meshBasicMat.fullPath());
+material.flags.display.set(true);
 
-// // add a light
-// scene.root().createNode('hemisphereLight');
+// add a light
+scene.root().createNode('hemisphereLight');
 
-// // create a camera
-// const perspectiveCamera1 = scene.root().createNode('perspectiveCamera');
-// perspectiveCamera1.p.t.set([5, 5, 5]);
-// // add orbit_controls
-// const events1 = perspectiveCamera1.createNode('events');
-// const orbitsControls = events1.createNode('cameraOrbitControls');
-// perspectiveCamera1.p.controls.setNode(orbitsControls);
+// create a camera
+const perspectiveCamera1 = scene.root().createNode('perspectiveCamera');
+perspectiveCamera1.p.t.set([5, 5, 5]);
+// add orbit_controls
+const events1 = perspectiveCamera1.createNode('events');
+const orbitsControls = events1.createNode('cameraOrbitControls');
+perspectiveCamera1.p.controls.setNode(orbitsControls);
 
-// // create viewer
-// perspectiveCamera1.createViewer(document.getElementById('app')!);
+// create viewer
+perspectiveCamera1.createViewer(document.getElementById('app')!);
 
-// // make some noes globals to access in html controls
-// (window as any).sphere = sphere;
+// make some nodes globals to access in html controls
+(window as any).palette = palette;
+(window as any).scatter = scatter;
