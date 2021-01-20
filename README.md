@@ -1,4 +1,4 @@
-# Polygonjs Occlusion Plugin
+# Polygonjs Palette Plugin
 
 This adds a Palette SOP node to the Polygonjs webgl engine.
 
