@@ -16,6 +16,7 @@ import '../../../core/operations/sop/chromotone';
 import {getAll} from 'chromotome';
 import {BaseNodeType} from 'polygonjs-engine/src/engine/nodes/_Base';
 import {Number3} from 'polygonjs-engine/src/types/GlobalTypes';
+import {ColorConversion} from 'polygonjs-engine/src/core/Color';
 
 interface Palette {
 	background: string;
@@ -92,22 +93,27 @@ class PaletteSopParamsConfig extends NodeParamsConfig {
 	/** @param palette color 1 */
 	color1 = ParamConfig.COLOR(DEFAULT.color1, {
 		visibleIf: visibleIfColorsCountAtLeast(1),
+		conversion: ColorConversion.SRGB_TO_LINEAR,
 	});
 	/** @param palette color 2 */
 	color2 = ParamConfig.COLOR(DEFAULT.color2, {
 		visibleIf: visibleIfColorsCountAtLeast(2),
+		conversion: ColorConversion.SRGB_TO_LINEAR,
 	});
 	/** @param palette color 3 */
 	color3 = ParamConfig.COLOR(DEFAULT.color3, {
 		visibleIf: visibleIfColorsCountAtLeast(3),
+		conversion: ColorConversion.SRGB_TO_LINEAR,
 	});
 	/** @param palette color 4 */
 	color4 = ParamConfig.COLOR(DEFAULT.color4, {
 		visibleIf: visibleIfColorsCountAtLeast(4),
+		conversion: ColorConversion.SRGB_TO_LINEAR,
 	});
 	/** @param palette color 5 */
 	color5 = ParamConfig.COLOR(DEFAULT.color5, {
 		visibleIf: visibleIfColorsCountAtLeast(5),
+		conversion: ColorConversion.SRGB_TO_LINEAR,
 	});
 }
 const ParamsConfig = new PaletteSopParamsConfig();
