@@ -1,7 +1,7 @@
-import {AllRegister} from 'polygonjs-engine/src/engine/poly/registers/All';
-AllRegister.run();
+import {AllNodesRegister} from '@polygonjs/engine/src/engine/poly/registers/nodes/All';
+import {Poly} from '@polygonjs/engine/src/engine/Poly';
+AllNodesRegister.run(Poly);
 import {polyPluginPalette} from '../src/index';
-import {Poly} from 'polygonjs-engine/src/engine/Poly';
 Poly.registerPlugin(polyPluginPalette);
 
 import './helpers/setup';

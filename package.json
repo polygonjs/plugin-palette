@@ -1,5 +1,5 @@
 {
-	"name": "polygonjs-plugin-p",
+	"name": "@polygonjs/plugin-palette",
 	"version": "1.0.0",
 	"engines": {
 		"node": ">=12.16.1",
@@ -39,9 +39,8 @@
 		"cp_types": "cp dist/polygonjs-plugin-palette/src/index.d.ts dist/"
 	},
 	"dependencies": {
-		"chromotome": "^1.19.1",
-		"lodash": "4.17.20",
-		"three": "^0.124.0"
+		"@polygonjs/engine": "^1.1.54",
+		"chromotome": "^1.19.1"
 	},
 	"devDependencies": {
 		"@types/lodash": "4.14.166",

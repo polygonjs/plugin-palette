@@ -28,6 +28,5 @@
 		"lib": ["dom", "es2019.array"]
 		// "typeRoots": []
 	},
-	// "include": ["./**/*.ts", "./**/*.vue"],
 	"exclude": ["node_modules", "modules", "dist", "public", "webpack"]
 }
