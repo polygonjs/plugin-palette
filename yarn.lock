@@ -68,10 +68,10 @@
     mkdirp "^1.0.4"
     rimraf "^2.7.1"
 
-"@polygonjs/engine@^1.1.54":
-  version "1.1.54"
-  resolved "https://registry.yarnpkg.com/@polygonjs/engine/-/engine-1.1.54.tgz#480743022c2596e098e86b113ed3b229e2fa3670"
-  integrity sha512-ZHanpEUMHVhb4ft4NdqpZJzI+WwCpH0kMpZlaSjiPOO4OkpfNlQAR5iE1+ka+LpOlDwpoTzxRnYkXCof+IXHXA==
+"@polygonjs/polygonjs@^1.1.55":
+  version "1.1.55"
+  resolved "https://registry.yarnpkg.com/@polygonjs/polygonjs/-/polygonjs-1.1.55.tgz#ddce92fe3b0d47ff76f1451506f43075789106ff"
+  integrity sha512-zjabNmwtoEsnDLK5cArid6LQTgVIfaYjJkBwyX3FMWxWmws9KQhwjAtT89XDUte9LoeQbavNqLed/1eOSm8RqA==
   dependencies:
     gsap "3.5.1"
     jsep "0.3.5"
@@ -1635,9 +1635,9 @@ entities@^1.1.1:
   integrity sha512-f2LZMYl1Fzu7YSBKg+RoROelpOaNrcGmE9AZubeDfrCEia483oW4MI4VyFd5VNHIgQ/7qm1I0wUHK1eJnn2y2w==
 
 entities@^2.0.0:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/entities/-/entities-2.1.0.tgz#992d3129cf7df6870b96c57858c249a120f8b8b5"
-  integrity sha512-hCx1oky9PFrJ611mf0ifBLBRW8lUUVRlFolb5gWRfIELabBlbp9xZvrqZLZAs+NxFnbfQoeGd8wDkygjg7U85w==
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/entities/-/entities-2.2.0.tgz#098dc90ebb83d8dffa089d55256b351d34c4da55"
+  integrity sha512-p92if5Nz619I0w+akJrLZH0MX0Pb5DX39XOwQTtXSdQQOaYH03S1uIQp4mhOZtAXrxq4ViO67YTiLBo2638o9A==
 
 errno@^0.1.3, errno@~0.1.7:
   version "0.1.8"
@@ -4855,9 +4855,9 @@ tslib@^2.0.3:
   integrity sha512-hcVC3wYEziELGGmEEXue7D75zbwIIVUMWAVbHItGPx0ziyXxrOMQx4rQEVEV45Ut/1IotuEvwqPopzIOkDMf0A==
 
 tsutils@^3.17.1:
-  version "3.19.1"
-  resolved "https://registry.yarnpkg.com/tsutils/-/tsutils-3.19.1.tgz#d8566e0c51c82f32f9c25a4d367cd62409a547a9"
-  integrity sha512-GEdoBf5XI324lu7ycad7s6laADfnAqCw6wLGI+knxvw9vsIYBaJfYdmeCEG3FMMUiSm3OGgNb+m6utsWf5h9Vw==
+  version "3.20.0"
+  resolved "https://registry.yarnpkg.com/tsutils/-/tsutils-3.20.0.tgz#ea03ea45462e146b53d70ce0893de453ff24f698"
+  integrity sha512-RYbuQuvkhuqVeXweWT3tJLKOEJ/UUw9GjNEZGWdrLLlM+611o1gwLHBpxoFJKKl25fLprp2eVthtKs5JOrNeXg==
   dependencies:
     tslib "^1.8.1"
 
