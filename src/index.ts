@@ -1,9 +1,6 @@
 import {PolyEngine} from '@polygonjs/polygonjs/dist/src/engine/Poly';
 import {CATEGORY_SOP} from '@polygonjs/polygonjs/dist/src/engine/poly/registers/nodes/Category';
 
-import {ExtendedGeoNodeChildrenMap} from './ExtendedGeoNodeChildrenMap';
-export {ExtendedGeoNodeChildrenMap};
-
 import {PaletteSopOperation} from './core/operations/sop/Palette';
 import {PaletteSopNode} from './engine/nodes/sop/Palette';
 import {PolyPlugin} from '@polygonjs/polygonjs/dist/src/engine/poly/registers/plugins/Plugin';
