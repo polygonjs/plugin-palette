@@ -1,8 +1,8 @@
-import {Constructor, valueof} from '@polygonjs/polygonjs/src/types/GlobalTypes';
-import {GeoObjNode} from '@polygonjs/polygonjs/src/engine/nodes/obj/Geo';
+import {Constructor, valueof} from '@polygonjs/polygonjs/dist/src/types/GlobalTypes';
+import {GeoObjNode} from '@polygonjs/polygonjs/dist/src/engine/nodes/obj/Geo';
 import {ExtendedGeoNodeChildrenMap} from '../../../ExtendedGeoNodeChildrenMap';
-import {ParamsInitData} from '@polygonjs/polygonjs/src/engine/nodes/utils/io/IOController';
-import {GeoNodeChildrenMap} from '@polygonjs/polygonjs/src/engine/poly/registers/nodes/Sop';
+import {ParamsInitData} from '@polygonjs/polygonjs/dist/src/engine/nodes/utils/io/IOController';
+import {GeoNodeChildrenMap} from '@polygonjs/polygonjs/dist/src/engine/poly/registers/nodes/Sop';
 
 export class ExtendedGeoObjNode extends GeoObjNode {
 	createNode<S extends keyof ExtendedGeoNodeChildrenMap>(

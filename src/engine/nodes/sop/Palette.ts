@@ -5,18 +5,18 @@
  * This is using [https://github.com/kgolid/chromotome#readme](https://github.com/kgolid/chromotome#readme)
  *
  */
-import {TypedSopNode} from '@polygonjs/polygonjs/src/engine/nodes/sop/_Base';
-import {CoreGroup} from '@polygonjs/polygonjs/src/core/geometry/Group';
+import {TypedSopNode} from '@polygonjs/polygonjs/dist/src/engine/nodes/sop/_Base';
+import {CoreGroup} from '@polygonjs/polygonjs/dist/src/core/geometry/Group';
 import {PaletteSopOperation} from '../../../core/operations/sop/Palette';
-import {NodeParamsConfig, ParamConfig} from '@polygonjs/polygonjs/src/engine/nodes/utils/params/ParamsConfig';
-import {VisibleIfParamOptions} from '@polygonjs/polygonjs/src/engine/params/utils/OptionsController';
+import {NodeParamsConfig, ParamConfig} from '@polygonjs/polygonjs/dist/src/engine/nodes/utils/params/ParamsConfig';
+import {VisibleIfParamOptions} from '@polygonjs/polygonjs/dist/src/engine/params/utils/OptionsController';
 import {Color} from 'three/src/math/Color';
 
 import '../../../core/operations/sop/chromotone';
 import {getAll} from 'chromotome';
-import {BaseNodeType} from '@polygonjs/polygonjs/src/engine/nodes/_Base';
-import {Number3} from '@polygonjs/polygonjs/src/types/GlobalTypes';
-import {ColorConversion} from '@polygonjs/polygonjs/src/core/Color';
+import {BaseNodeType} from '@polygonjs/polygonjs/dist/src/engine/nodes/_Base';
+import {Number3} from '@polygonjs/polygonjs/dist/src/types/GlobalTypes';
+import {ColorConversion} from '@polygonjs/polygonjs/dist/src/core/Color';
 
 interface Palette {
 	background: string;

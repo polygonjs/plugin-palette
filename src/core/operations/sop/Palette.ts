@@ -1,9 +1,9 @@
-import {BaseSopOperation} from '@polygonjs/polygonjs/src/core/operations/sop/_Base';
-import {DefaultOperationParams} from '@polygonjs/polygonjs/src/core/operations/_Base';
-import {CoreGroup, Object3DWithGeometry} from '@polygonjs/polygonjs/src/core/geometry/Group';
-import {InputCloneMode} from '@polygonjs/polygonjs/src/engine/poly/InputCloneMode';
+import {BaseSopOperation} from '@polygonjs/polygonjs/dist/src/core/operations/sop/_Base';
+import {DefaultOperationParams} from '@polygonjs/polygonjs/dist/src/core/operations/_Base';
+import {CoreGroup, Object3DWithGeometry} from '@polygonjs/polygonjs/dist/src/core/geometry/Group';
+import {InputCloneMode} from '@polygonjs/polygonjs/dist/src/engine/poly/InputCloneMode';
 import {Color} from 'three/src/math/Color';
-import {CoreGeometry} from '@polygonjs/polygonjs/src/core/geometry/Geometry';
+import {CoreGeometry} from '@polygonjs/polygonjs/dist/src/core/geometry/Geometry';
 
 interface PaletteSopParams extends DefaultOperationParams {
 	palette: number;

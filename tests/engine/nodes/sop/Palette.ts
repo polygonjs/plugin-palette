@@ -1,4 +1,4 @@
-import {PolyScene} from '@polygonjs/polygonjs/src/engine/scene/PolyScene';
+import {PolyScene} from '@polygonjs/polygonjs/dist/src/engine/scene/PolyScene';
 import {ExtendedGeoObjNode} from '../../../../src/engine/nodes/obj/ExtendedGeo';
 
 QUnit.test('palette simple', async (assert) => {

@@ -1,13 +1,13 @@
-import {Poly} from '@polygonjs/polygonjs/src/engine/Poly';
-import {PolyScene} from '@polygonjs/polygonjs/src/engine/scene/PolyScene';
+import {Poly} from '@polygonjs/polygonjs/dist/src/engine/Poly';
+import {PolyScene} from '@polygonjs/polygonjs/dist/src/engine/scene/PolyScene';
 import {ExtendedGeoObjNode} from './engine/nodes/obj/ExtendedGeo';
 
 // register all nodes
-import {AllRegister} from '@polygonjs/polygonjs/src/engine/poly/registers/All';
+import {AllRegister} from '@polygonjs/polygonjs/dist/src/engine/poly/registers/All';
 AllRegister.run();
 // register nodes for this plugin
 import {polyPluginPalette} from './index';
-import {AttribClass} from '@polygonjs/polygonjs/src/core/geometry/Constant';
+import {AttribClass} from '@polygonjs/polygonjs/dist/src/core/geometry/Constant';
 Poly.registerPlugin(polyPluginPalette);
 
 // create a scene

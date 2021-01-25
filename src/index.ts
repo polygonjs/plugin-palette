@@ -1,12 +1,12 @@
-import {PolyEngine} from '@polygonjs/polygonjs/src/engine/Poly';
-import {CATEGORY_SOP} from '@polygonjs/polygonjs/src/engine/poly/registers/nodes/Category';
+import {PolyEngine} from '@polygonjs/polygonjs/dist/src/engine/Poly';
+import {CATEGORY_SOP} from '@polygonjs/polygonjs/dist/src/engine/poly/registers/nodes/Category';
 
 import {ExtendedGeoNodeChildrenMap} from './ExtendedGeoNodeChildrenMap';
 export {ExtendedGeoNodeChildrenMap};
 
 import {PaletteSopOperation} from './core/operations/sop/Palette';
 import {PaletteSopNode} from './engine/nodes/sop/Palette';
-import {PolyPlugin} from '@polygonjs/polygonjs/src/engine/poly/registers/plugins/Plugin';
+import {PolyPlugin} from '@polygonjs/polygonjs/dist/src/engine/poly/registers/plugins/Plugin';
 function PolygonjsPluginPalette(poly: PolyEngine) {
 	poly.registerOperation(PaletteSopOperation);
 	poly.registerNode(PaletteSopNode, CATEGORY_SOP.RENDER);
