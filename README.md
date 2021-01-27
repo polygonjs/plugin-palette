@@ -6,10 +6,10 @@ This wraps the work done in https://github.com/kgolid/chromotome into a node tha
 
 See [example scene](https://github.com/polygonjs/example-plugin-palette):
 
-![Spheres with colors defined with the Palette node](https://github.com/polygonjs/example-plugin-palette/blob/master/doc/palette_examples.jpg?raw=true)
+![Spheres with colors defined with the Palette node](https://github.com/polygonjs/example-plugin-palette/blob/main/doc/palette_examples.jpg?raw=true)
 
 <p>
-  <a href="https://github.com/polygonjs/example-plugin-palette"><img width="274" src="https://github.com/polygonjs/example-plugin-palette/blob/master/doc/plugin-palette.001.gif?raw=true" /></a>
+  <a href="https://github.com/polygonjs/example-plugin-palette"><img width="274" src="https://github.com/polygonjs/example-plugin-palette/blob/main/doc/plugin-palette.001.gif?raw=true" /></a>
 </p>
 
 # Install
