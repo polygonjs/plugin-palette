@@ -7,12 +7,12 @@
  */
 import {TypedSopNode} from '@polygonjs/polygonjs/dist/src/engine/nodes/sop/_Base';
 import {CoreGroup} from '@polygonjs/polygonjs/dist/src/core/geometry/Group';
-import {PaletteSopOperation} from '../../../core/operations/sop/Palette';
+import {PaletteSopOperation} from '../../operations/sop/Palette';
 import {NodeParamsConfig, ParamConfig} from '@polygonjs/polygonjs/dist/src/engine/nodes/utils/params/ParamsConfig';
 import {VisibleIfParamOptions} from '@polygonjs/polygonjs/dist/src/engine/params/utils/OptionsController';
 import {Color} from 'three/src/math/Color';
 
-import '../../../core/operations/sop/chromotone';
+import '../../operations/sop/chromotone';
 import {getAll} from 'chromotome';
 import {BaseNodeType} from '@polygonjs/polygonjs/dist/src/engine/nodes/_Base';
 import {Number3} from '@polygonjs/polygonjs/dist/src/types/GlobalTypes';
