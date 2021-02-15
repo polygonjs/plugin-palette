@@ -1,6 +1,6 @@
 {
 	"name": "@polygonjs/plugin-palette",
-	"version": "1.0.6",
+	"version": "1.0.8",
 	"engines": {
 		"node": ">=12.16.1",
 		"yarn": ">=1.22.4"
@@ -39,7 +39,7 @@
 		"cp_types": "cp dist/src/*.d.ts dist/"
 	},
 	"dependencies": {
-		"@polygonjs/polygonjs": "^1.1.60",
+		"@polygonjs/polygonjs": "^1.1.67",
 		"chromotome": "^1.19.1"
 	},
 	"devDependencies": {
