@@ -87,8 +87,8 @@ class PaletteSopParamsConfig extends NodeParamsConfig {
 	colorsCount = ParamConfig.INTEGER(DEFAULT.colorsCount, {
 		hidden: true,
 		range: [0, maxFoundColorsCount],
+		separatorAfter: true,
 	});
-	sep = ParamConfig.SEPARATOR();
 	/** @param palette color 1 */
 	color1 = ParamConfig.COLOR(DEFAULT.color1.toArray() as Number3, {
 		visibleIf: visibleIfColorsCountAtLeast(1),
@@ -118,7 +118,7 @@ class PaletteSopParamsConfig extends NodeParamsConfig {
 const ParamsConfig = new PaletteSopParamsConfig();
 
 export class PaletteSopNode extends TypedSopNode<PaletteSopParamsConfig> {
-	params_config = ParamsConfig;
+	paramsConfig = ParamsConfig;
 	static type() {
 		return 'palette';
 	}
