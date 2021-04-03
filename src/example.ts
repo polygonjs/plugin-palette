@@ -23,7 +23,7 @@ const copy = geo.createNode('copy');
 const attribPromote = geo.createNode('attribPromote');
 const material = geo.createNode('material');
 
-const materials = scene.root().createNode('materials');
+const materials = scene.root().createNode('materialsNetwork');
 const meshBasicMat = materials.createNode('meshBasic');
 meshBasicMat.p.useVertexColors.set(1);
 
@@ -42,7 +42,7 @@ attribPromote.p.classFrom.set(AttribClass.OBJECT);
 attribPromote.p.classTo.set(AttribClass.VERTEX);
 attribPromote.p.name.set('color');
 material.setInput(0, attribPromote);
-material.p.material.set(meshBasicMat.fullPath());
+material.p.material.set(meshBasicMat.path());
 material.flags.display.set(true);
 
 // add a light
@@ -52,7 +52,7 @@ scene.root().createNode('hemisphereLight');
 const perspectiveCamera1 = scene.root().createNode('perspectiveCamera');
 perspectiveCamera1.p.t.set([5, 5, 5]);
 // add orbit_controls
-const events1 = perspectiveCamera1.createNode('events');
+const events1 = perspectiveCamera1.createNode('eventsNetwork');
 const orbitsControls = events1.createNode('cameraOrbitControls');
 perspectiveCamera1.p.controls.setNode(orbitsControls);
 
