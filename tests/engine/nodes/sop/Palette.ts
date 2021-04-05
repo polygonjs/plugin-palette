@@ -13,7 +13,7 @@ QUnit.test('palette simple', async (assert) => {
 	palette.setInput(0, plane);
 	palette.p.palette.set(1);
 
-	let container = await palette.requestContainer();
+	let container = await palette.compute();
 	let coreContent = container.coreContent()!;
 	assert.ok(coreContent);
 	let geometry = coreContent.objectsWithGeo()[0].geometry;
@@ -33,7 +33,7 @@ QUnit.test('palette simple', async (assert) => {
 	assert.in_delta(colorAttribArray[11], 0.9734452962875366, delta);
 
 	palette.p.palette.set(2);
-	container = await palette.requestContainer();
+	container = await palette.compute();
 	coreContent = container.coreContent()!;
 	assert.ok(coreContent);
 	geometry = coreContent.objectsWithGeo()[0].geometry;
