@@ -10,4 +10,5 @@ function PolygonjsPluginPalette(poly: PolyEngine) {
 }
 export const polyPluginPalette = new PolyPlugin('palette', PolygonjsPluginPalette, {
 	libraryName: '@polygonjs/plugin-palette',
+	libraryImportPath: '@polygonjs/plugin-palette/dist',
 });
